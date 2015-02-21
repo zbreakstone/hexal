@@ -8,6 +8,7 @@
 .container {
 	max-width: 1020px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
 
 .text-center {
@@ -31,27 +32,62 @@
 	text-align: center;
 	margin: -40px 0 0 0;
 }
+.hex-row1:before, .hex-row3:before {
+	content: '';
+	width: 1px;
+	height: 104px;
+	float: left;
+	background: #e4e9eb;
+	position: relative;
+	left: -20px;
+	top: 52px;
+}
+.hex-row1:after, .hex-row3:after {
+	content: '';
+	width: 1px;
+	height: 104px;
+	float: right;
+	background: #e4e9eb;
+	position: relative;
+	right: -20px;
+	top: 52px;
+}
 ul[class*="hex-row"] > .hexagon:last-child {
 	margin: 0;
 }
 .hexagon {
-    display: inline;
-    float: left;
     margin: 0 20px 0 0;
-	width: 180px;
-	height: 206px;
-	overflow: hidden;
-	text-align: center;
-	background: #ddd2c5;
-	-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-.hexagon img {
+.wrap {
 	position: relative;
-	top: -10px;
-	left: -20px;
+	z-index: 10;
+	text-align: center;
 }
-
+.svg-wrap {
+	position: relative;
+	color: #fff;
+	text-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.svg-wrap li {
+	display: inline-block;
+	float: left;
+}
+.svg-graphic {
+	position: relative;
+	display: block;
+	z-index: 0;
+}
+svg image {
+	-webkit-transition: opacity 300ms ease;
+	-moz-transition: opacity 300ms ease;
+	transition: opacity 300ms ease;
+}
+svg polygon:hover {
+	opacity: 1;
+}
+svg a:hover image {
+	opacity: 0.4;
+}
 
 
 /* Begin Responsive Styling */
@@ -108,6 +144,7 @@ ul[class*="hex-row"] > .hexagon:last-child {
         display: none !important ;
     }
 }
+
 
 
 
